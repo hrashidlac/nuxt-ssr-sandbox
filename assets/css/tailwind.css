@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+}
+
+@layer base {
+  h1 {
+    @apply text-5xl leading-5xl md:text-8xl md:leading-8xl lg:text-10xl lg:leading-10xl font-agencywide text-center;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-agencybold uppercase;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl lg:text-2xl font-agencybold uppercase;
+  }
+
+  h4 {
+    @apply text-base md:text-lg font-agencybold;
+  }
+
+  body {
+    @apply text-sm md:text-base font-avenir;
+  }
+  
+  p{
+    @apply mb-3
+  }
+  p a{
+    @apply text-red
+  }
+
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/AvenirLTStd-Book.woff2') format('woff2'),
+      url('../fonts/AvenirLTStd-Book.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir Black';
+  src: url('../fonts/AvenirLTStd-Black.woff2') format('woff2'),
+      url('../fonts/AvenirLTStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AgencyFB Regular';
+  src: url('../fonts/AgencyFB-Regular.woff2') format('woff2'),
+      url('../fonts/AgencyFB-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AgencyFB Bold';
+  src: url('../fonts/AgencyFB-Bold.woff2') format('woff2'),
+      url('../fonts/AgencyFB-Bold.woff') format('woff');
+  font-weight: bold;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AgencyFB BlackWide';
+  src: url('../fonts/AgencyFB-BlackWide.woff2') format('woff2'),
+      url('../fonts/AgencyFB-BlackWide.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('../fonts/Roboto-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Druk Wide Medium Regular';
+  src: url('../fonts/DrukWideWebMediumRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Madela';
+  src: url('../fonts/Madela.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container::before{
+  display: none !important;
+}
+/* Navigation Mobile */
+@media screen and (max-width:1024px) {
+  p{
+    @apply text-lg
+  } 
+}
+

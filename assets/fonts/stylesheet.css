@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'AgencyFB BlackWide';
+    src: url('AgencyFB-BlackWide.woff2') format('woff2'),
+        url('AgencyFB-BlackWide.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AgencyFB';
+    src: url('AgencyFB-Bold.woff2') format('woff2'),
+        url('AgencyFB-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('AvenirLTStd-Black.woff2') format('woff2'),
+        url('AvenirLTStd-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AgencyFB';
+    src: url('AgencyFB-Regular.woff2') format('woff2'),
+        url('AgencyFB-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

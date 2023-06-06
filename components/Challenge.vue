@@ -1,6 +1,6 @@
 
 <template>
-  <div class="py-32 container">   
+  <div class="py-32 container">     
     <div class="text-center mb-8 text-4xl font-agencywide uppercase">Mission Control</div>
     <form @submit.prevent="goToStep(2)" class="mb-12">
       <div class="lg:flex lg:space-x-12 items-end justify-center"> 
