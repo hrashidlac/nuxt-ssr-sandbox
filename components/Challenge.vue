@@ -1,52 +1,60 @@
 
 <template>
-  <div class="py-48 container">   
-    <form @submit.prevent="goToStep(2)" class="flex space-x-12 items-end justify-center">
-      <div class="w-2/5">
-        <RoundKnobs />
-        <div class="py-12">
-          <label for="" class="block mb-2">Choose your Rocket:</label>
-          <select class="px-4 py-3 rounded-full w-full text-black" id="rockets" v-model="selectedRocket" required>
-          <option value="" selected>Rockets</option>
-          <option v-for="rocket in rockets" :key="rocket.name" :value="rocket.name">
-            {{ rocket.name }}
-          </option>
-        </select>
+  <div class="py-32 container">   
+    <div class="text-center mb-8 text-4xl font-agencywide uppercase">Mission Control</div>
+    <form @submit.prevent="goToStep(2)" class="mb-12">
+      <div class="flex space-x-12 items-end justify-center"> 
+        <div class="w-2/5">
+          <RoundKnobs />
+          <div class="my-8 p-6 bg-grey rounded-lg">
+            <label for="" class="block mb-2">Choose your Rocket:</label>
+            <select class="px-4 py-3 rounded-full w-full text-black" id="rockets" v-model="selectedRocket" required>
+            <option value="" selected>Rockets</option>
+            <option v-for="rocket in rockets" :key="rocket.name" :value="rocket.name">
+              {{ rocket.name }}
+            </option>
+          </select>
+          </div>
+          
+          <RoundKnobs/>
         </div>
         
-        <RoundKnobs/>
-      </div>
-      
-      <div class="w-2/5">
-        <RoundKnobsGreen />
-        <div class="py-12">
-          <label for="" class="block mb-2">Choose your Launchpad:</label>
-          <select class="px-4 py-3 rounded-full w-full text-black" v-model="selectedLaunchpad" required>
-            <option value="" selected>Launchpads</option>
-            <option v-for="launchpad in launchpads" :key="launchpad.name" :value="launchpad">
-              {{ launchpad.full_name }}
-            </option>
-          </select>
+        <div class="w-2/5">
+          <RoundKnobsGreen />
+          <div class="my-8 p-6 bg-grey rounded-lg">
+            <label for="" class="block mb-2">Choose your Launchpad:</label>
+            <select class="px-4 py-3 rounded-full w-full text-black" v-model="selectedLaunchpad" required>
+              <option value="" selected>Launchpads</option>
+              <option v-for="launchpad in launchpads" :key="launchpad.name" :value="launchpad">
+                {{ launchpad.full_name }}
+              </option>
+            </select>
+          </div>
+          <RoundKnobsGreen />
         </div>
-        <RoundKnobsGreen />
-      </div>
-      
-      <div class="w-2/5">
-        <RoundKnobsOrange />
-        <div class="py-12">
-          <label for="" class="block mb-2">Choose your Time:</label>
-          <select class="px-4 py-3 rounded-full w-full text-black" v-model="selectedTime" required>
-            <option value="" selected>Launch Time</option>
-            <option v-for="time in times" :key="time" :value="time">
-              {{ time }}
-            </option>
-          </select>
+        
+        <div class="w-2/5">
+          <RoundKnobsOrange />
+          <div class="my-8 p-6 bg-grey rounded-lg">
+            <label for="" class="block mb-2">Choose your Time:</label>
+            <select class="px-4 py-3 rounded-full w-full text-black" v-model="selectedTime" required>
+              <option value="" selected>Launch Time</option>
+              <option v-for="time in times" :key="time" :value="time">
+                {{ time }}
+              </option>
+            </select>
+          </div>
+          <RoundKnobsOrange />
         </div>
-        <RoundKnobsOrange />
       </div>
+      <div class="text-center">
+      <button type="submit" class="mt-8 px-8 py-3 rounded text-3xl text-white uppercase bg-red font-agencybold uppercase" v-if="activePhase == 1">Launch!</button>
+      <button type="button" class="px-8 py-3 rounded text-3xl text-white uppercase bg-red font-agencybold uppercase" v-if="activePhase == 2" @click="Reset">Reset!</button>
+
+    </div>
       
-      <button type="submit" class="px-4 py-3 rounded-full text-white uppercase bg-red font-agencybold uppercase">Launch!</button>
     </form> 
+    
     <div ref="fullscreen">
       <div v-if="activePhase == 2"> 
         <div>
@@ -103,14 +111,13 @@
     </div>
     <div>Selected Time: {{ selectedTime }} <br/><!-- Selected Rocket: {{ selectedRocket }} --></div><div><!-- Selected Launchpad: {{ selectedLaunchpad }}  --></div>
     
-    <button type="button" @click="Reset">Reset</button>
+    
     <button v-if="showFSButton" @click="fullScreen">Full Screen</button>
     <div class="hidden">today:{{ calcDate() }}</div>
   </div>
 </template>
 <script>
 import VueCountdownTimer from 'vuejs-countdown-timer'
-import vueMandatory from 'vue-mandatory'
 
 import moment from 'moment'
 export default {
