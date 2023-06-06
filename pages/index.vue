@@ -1,5 +1,7 @@
 <template>
-  <Challenge/>
+  <div class="bg-black text-white font-avenir">
+    <Challenge/>
+  </div>
 </template>
 
 <script>
