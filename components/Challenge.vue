@@ -244,12 +244,12 @@ export default {
       //console.log(dateTime);
 
       var timeStops = [];
-      var endTime = moment().add(3, 'hours');
+      var endTime = moment().add(8, 'hours');
       //console.log('starte time: '+start);
       //console.log('end time: '+endTime);
       while(start <= endTime){
         timeStops.push(new moment(start).format('h:mm a'));
-        start.add(15, 'minutes');
+        start.add(30, 'minutes');
       } 
       //console.log(timeStops);
       this.times = timeStops;
